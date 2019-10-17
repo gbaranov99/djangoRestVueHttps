@@ -6,7 +6,7 @@ const state = {
 
 const getters = {
   files: state => {
-	  return state.files
+    return state.files
   }
 }
 
