@@ -40,13 +40,14 @@ services:
   nginx:
     image: nginx:alpine
     ports:
-      - "8000:80"
+      - "80:80"
     depends_on:
       - backend
     volumes:
       - ./backend/media/:/code/media/
       - ./backend/static/:/code/static/
       - ./nginx/dev.conf:/etc/nginx/nginx.conf:ro
+      - ./letsencrypt-site:/usr/share/nginx/html
 
 volumes:
   postgres_data:
