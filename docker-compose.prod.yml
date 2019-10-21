@@ -45,7 +45,6 @@ services:
     volumes:
       - ./backend/media/:/code/media/
       - ./backend/static/:/code/static/
-      - ./nginx/prod.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
       - /docker-volumes/etc/letsencrypt/live/totrno.com/fullchain.pem:/etc/letsencrypt/live/totrno.com/fullchain.pem
       - /docker-volumes/etc/letsencrypt/live/totrno.com/privkey.pem:/etc/letsencrypt/live/totrno.com/privkey.pem
