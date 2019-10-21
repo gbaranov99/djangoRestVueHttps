@@ -12,11 +12,12 @@ Letsencrypt/certbot for https certificate
 docker-compose up --build -d
 
 ### For production build:
-#### Before building, run:
+#### Before building for the first time, run:
 docker-compose -f docker-compose.prod.yml run backend python /code/manage.py migrate
 
 docker-compose -f docker-compose.prod.yml run backend python /code/manage.py createsuperuser
 
+#### Then run this command, and only this command after first run
 docker-compose -f docker-compose.prod.yml up --build -d
 
 ## Recommendations for customization:
