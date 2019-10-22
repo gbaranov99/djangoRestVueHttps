@@ -1,5 +1,2 @@
-node_modules
-/dist
-backend/static
 __pycache__
 postgres_data

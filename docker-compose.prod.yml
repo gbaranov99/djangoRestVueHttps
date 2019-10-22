@@ -43,7 +43,6 @@ services:
     depends_on:
       - backend
     volumes:
-      - ./backend/media/:/code/media/
       - ./backend/static/:/code/static/
       - ./nginx/dh-param/dhparam-2048.pem:/etc/ssl/certs/dhparam-2048.pem
       - /docker-volumes/etc/letsencrypt/live/totrno.com/fullchain.pem:/etc/letsencrypt/live/totrno.com/fullchain.pem

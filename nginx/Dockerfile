@@ -4,9 +4,11 @@ FROM node:alpine as build-deps
 WORKDIR /code/
 
 COPY frontend/babel.config.js frontend/package.json frontend/yarn.lock /code/
+RUN npm install -g yarn
 RUN yarn install
 
 COPY frontend /code/
+
 RUN yarn build
 
 # Stage 2 - nginx & frontend dist

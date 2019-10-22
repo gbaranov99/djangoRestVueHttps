@@ -11,14 +11,20 @@ Letsencrypt/certbot for https certificate
 ### For development build:
 docker-compose up --build -d
 
+Note: only works if <yarn install> is run in frontend folder
+
+Also requires changing domin name to http://localip in frontend/src/store/services/api.js
+
 ### For production build:
 #### Before building for the first time, run:
+
 docker-compose -f docker-compose.prod.yml run backend python /code/manage.py migrate
 
-docker-compose -f docker-compose.prod.yml run backend python /code/manage.py createsuperuser
-
-#### Then run this command, and only this command after first run
+#### After that, only running this command is required:
 docker-compose -f docker-compose.prod.yml up --build -d
+
+#### This command brings containers down:
+docker-compose down
 
 ## Recommendations for customization:
 Update the environment variables in docker-compose files, or create .env files
